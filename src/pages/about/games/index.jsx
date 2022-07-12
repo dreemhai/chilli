@@ -3,10 +3,9 @@ import styled from "styled-components/macro";
 
 const SectionWrapper = styled.div`
   position: relative;
-  top: -200px;
-  height: 1900px;
-  background-image: url('/images/about/games-bg.png');
-  background-size: contain;
+  /* height: 1900px; */
+  /* background-image: url('/images/about/games-bg.png'); */
+  background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;

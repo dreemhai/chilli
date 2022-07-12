@@ -21,8 +21,8 @@ const AboutPage = () => {
         {/* <BetStuff>
           <img src="/images/about/deco.png" />
         </BetStuff> */}
-        {/* <GamesSection />
-        <RoadMap /> */}
+        <GamesSection />
+        {/* <RoadMap /> */}
       </PageWrapper>
   )
 }
