@@ -1,0 +1,12 @@
+.roadmap--wrapper .react-multi-carousel-list {
+  overflow: visible;
+}
+.roadmap--wrapper .react-multi-carousel-item {
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  transform: translate(0px, -100px) scale(0.9);
+}
+.roadmap--wrapper .react-multi-carousel-item--active {
+  transform: none;
+}/*# sourceMappingURL=style.css.map */

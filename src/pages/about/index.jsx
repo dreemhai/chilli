@@ -92,18 +92,18 @@ const Spider = () => {
 const AboutPage = () => {
   return (
       <PageWrapper>
-        {/* <IntroSection />
-        <BranchWrapper>
+        <IntroSection />
+        {/* <BranchWrapper>
           <Branch>
             <img src='/images/about/branch.png' />
           </Branch>
           <Spider />
-        </BranchWrapper>
+        </BranchWrapper> */}
         <VideoSection />
-        <BetStuff>
+        {/* <BetStuff>
           <img src="/images/about/deco.png" />
-        </BetStuff>
-        <GamesSection /> */}
+        </BetStuff> */}
+        <GamesSection />
         <RoadMap />
       </PageWrapper>
   )

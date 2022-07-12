@@ -142,7 +142,7 @@ const BgImg = styled.div`
 
 const RareSection = () => {
   return (
-    <SectionWrapper>
+    <SectionWrapper className='rare--section'>
       <BgImg>
         <img src='/images/nft/rare/background.png' />
       </BgImg>

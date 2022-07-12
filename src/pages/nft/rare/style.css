@@ -1,26 +1,23 @@
-.react-multi-carousel-dot--active button {
+.rare--section .react-multi-carousel-dot--active button {
   background: #FFF !important;
 }
-
-.react-multi-carousel-dot button {
+.rare--section .react-multi-carousel-dot button {
   border-color: #FFF;
 }
 @media (min-width: 768px) {
-  .react-multi-carousel-dot button {
+  .rare--section .react-multi-carousel-dot button {
     width: 20px !important;
     height: 20px !important;
     border-width: 4px;
   }
 }
-
 @media (min-width: 768px) {
-  .react-multi-carousel-dot-list {
+  .rare--section .react-multi-carousel-dot-list {
     gap: 6px;
   }
 }
-
 @media (min-width: 768px) {
-  .react-multi-carousel-dot-list {
+  .rare--section .react-multi-carousel-dot-list {
     justify-content: flex-end;
     padding-right: 68px !important;
   }
