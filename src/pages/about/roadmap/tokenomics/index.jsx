@@ -7,12 +7,16 @@ const SectionWrapper = styled.div`
 `
 
 const InnerWrapper = styled.div`
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr); */
     padding: 10px;
 
     @media (min-width: 768px) {
-        padding: 157px 0;
+        padding: 46px 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+
     }
 `
 
@@ -25,6 +29,11 @@ const Heading = styled.h2`
   margin: 0;
 
   @media (min-width: 768px) {
+    font-size: 75px;
+    line-height: 80px;
+  }
+
+  @media (min-width: 1024px) {
     font-size: 96px;
     line-height: 102px;
   }
@@ -47,6 +56,11 @@ const Text = styled.span`
   color: #FFF;
 
   @media (min-width: 768px) {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  @media (min-width: 1024px) {
     font-size: 32px;
     line-height: 42px;    
   } 
@@ -81,6 +95,17 @@ const PartDesc = styled.div`
     font-size: 14px;
     line-height: 15px;
    }
+
+   @media (min-width: 1024px) {
+    top: ${props => props.top ? props.top : "0"};
+    left: ${props => props.left ? props.left : "0"};
+    width: auto;
+
+    span {
+        font-size: 18px;
+        line-height: 20px;
+    }
+   }
 `
 
 const Cloud = styled.div`
@@ -112,49 +137,49 @@ const Tokenomics = () => {
                             <PieChart>
                                 <img src='/images/about/roadmap/pie-chart.png' />
                             </PieChart>
-                            <PartDesc top='3%' left='-17%' mtop='-6%' mleft='0%'>
+                            <PartDesc top='1%' left='-9%' mtop='-6%' mleft='0%'>
                                 <Flex column alignEnd>
                                     <span>18%</span>
                                     <span style={{textAlign: 'right'}}>Research &#38; Development</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='15%' left='-19%' mtop='9%' mleft='-6%'>
+                            <PartDesc top='15%' left='-6%' mtop='9%' mleft='-6%'>
                                 <Flex column alignEnd>
                                     <span>10%</span>
                                     <span style={{textAlign: 'right'}}>Team &#38; Advisors</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='30%' left='-2%' mtop='27%' mleft='0%'>
+                            <PartDesc top='30%' left='12%' mtop='27%' mleft='0%'>
                                 <Flex column alignEnd>
                                     <span>20%</span>
                                     <span>Treasury</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='41%' left='17%' mtop='40%' mleft='19%'>
+                            <PartDesc top='41%' left='30%' mtop='40%' mleft='19%'>
                                 <Flex column alignEnd>
                                     <span>2.5%</span>
                                     <span>Airdrops</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='20%' left='58%' mtop='17%' mleft='65%'>
+                            <PartDesc top='20%' left='66%' mtop='17%' mleft='65%'>
                                 <Flex column>
                                     <span>30%</span>
                                     <span>Farming&nbsp;/&nbsp;Staking</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='9%' left='60%' mtop='9%' mleft='69%'>
+                            <PartDesc top='10%' left='68%' mtop='9%' mleft='69%'>
                                 <Flex column>
                                     <span>2.5%</span>
                                     <span>Bounties</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='4%' left='43%' mtop='1%' mleft='53%'>
+                            <PartDesc top='4%' left='55%' mtop='1%' mleft='53%'>
                                 <Flex column>
                                     <span>15%</span>
                                     <span>Private&nbsp;Rounds</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='-2%' left='40%' mtop='-7%' mleft='50%'>
+                            <PartDesc top='-2%' left='54%' mtop='-7%' mleft='50%'>
                                 <Flex column>
                                     <span>2%</span>
                                     <span>Public&nbsp;&#123;Lunchpads&#125;</span>
