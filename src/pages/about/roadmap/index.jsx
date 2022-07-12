@@ -5,7 +5,7 @@ import styled from "styled-components/macro";
 
 const SectionWrapper = styled.div`
   background: linear-gradient(180deg, #62D5E6 0%, #DBFBD5 100%);
-  height: 100vh;
+  margin-top: -276px;
 `;
 
 

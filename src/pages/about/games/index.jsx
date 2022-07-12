@@ -11,6 +11,7 @@ const SectionWrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  z-index: 1;
 `;
 
 const Background = styled.div`

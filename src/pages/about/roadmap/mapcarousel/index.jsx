@@ -28,8 +28,13 @@ const CarouselWrapper = styled.div`
 `
 
 const Slider = styled.div`
-  width: 200px;
-  height: 600px;
+  width: 196px;
+  height: 520px;
+
+  @media (min-width: 768px) {
+    width: 337px;
+    height: 1072px;
+  }
 `
 
 const SignBoardWrapper = styled.div`
@@ -40,9 +45,11 @@ const SignBoardWrapper = styled.div`
 `
 
 const Signboard = styled.div`
-  width: 85%;
+  width: 100%;
   background: linear-gradient(180deg, #84203F 0%, #AC3E1C 100%);
   transform: perspective(500px) rotateY(33deg) translate(15%, 0);
+  padding-left: 15px;
+  color: #FFF;
 
   &:before {
     content: '';
@@ -64,6 +71,7 @@ const InnerContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
+  margin-top: -100px;
 `
 
 const LineImg = styled.div`
@@ -74,9 +82,45 @@ const LineImg = styled.div`
   background-repeat: no-repeat;
 `
 
+const RoadMapTitle = styled.div`
+  background-image: url('/images/about/roadmap/carousel/title-bg.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 414px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 239px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 608px;
+    top: 30%;
+  }
+`
+
+const Heading = styled.h2`
+  font-family: BadaBoom;
+  font-weight: 400;
+  text-align: center;
+  font-size: 38px;
+  line-height: 45px;
+  color: #FFF;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 77px;
+    line-height: 111px;
+  }
+`
+
 const MapCarousel = () => {
   return (
-    <div style={{paddingTop: '200px'}} className='roadmap--wrapper'>
+    <div className='roadmap--wrapper'>
       <Container>
         <InnerContainer>
           <CarouselWrapper>
@@ -124,6 +168,9 @@ const MapCarousel = () => {
             </Carousel>
           </CarouselWrapper>
         </InnerContainer>
+        <RoadMapTitle>
+          <Heading>ROADMAP</Heading>
+        </RoadMapTitle>
       </Container>
     </div>
   )

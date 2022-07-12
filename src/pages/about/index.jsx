@@ -22,7 +22,7 @@ const AboutPage = () => {
           <img src="/images/about/deco.png" />
         </BetStuff> */}
         <GamesSection />
-        {/* <RoadMap /> */}
+        <RoadMap />
       </PageWrapper>
   )
 }
