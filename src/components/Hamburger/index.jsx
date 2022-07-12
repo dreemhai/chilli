@@ -47,16 +47,17 @@ const Hamburger = ({onClick}) => {
   const clicked = useContext(SelectContext);
   const tl = useRef();
   const el = useRef();
+
   const [items, addItem] = useArrayRef();
 
   useEffect(() => {
     tl.current = gsap.timeline()
-      .to(el.current, 0.1, {
+      .to(el.current, 0.05, {
         rotation: -90
       })
-      .to(items.current[0], { y: '+11px', rotation: -45, duration: 0.1 }, 0)
+      .to(items.current[0], { y: '+11px', rotation: -45, duration: 0.05 }, 0)
       .to(items.current[1], { opacity: 0, duration: 0.1 }, 0)
-      .to(items.current[2], { y: '-11px', rotation: 45, duration: 0.1 }, 0)
+      .to(items.current[2], { y: '-11px', rotation: 45, duration: 0.05 }, 0)
 
     return tl.current.progress(0).kill();
   }, [])

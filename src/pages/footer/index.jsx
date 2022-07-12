@@ -27,9 +27,14 @@ const Link = styled.div`
 const Text = styled.span`
   font-family: 'Work Sans', sans-serif;
   font-weight: ${props => props.title ? '600' : '400'};
-  font-size: ${props => props.title ? '16px' : '17.5px'};
-  line-height: 21px;
+  font-size: ${props => props.title ? '12.5px' : '14.5px'};
+  line-height: 15px;
   color: ${props => props.title ? '#6B6B6B' : '#f0f0f0'};
+
+  @media (min-width: 768px) {
+    font-size: ${props => props.title ? '16px' : '17.5px'};
+    line-height: 21px;
+  }
 `
 
 const InnerWrapper = styled.div`

@@ -1,6 +1,13 @@
 .react-tabs__tab {
   font-family: BadaBoom;
-  font-size: 16px;
+  font-size: 18px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 .react-tabs__tab--selected {
@@ -12,4 +19,11 @@
 
 .react-tabs__tab-list {
   margin: 0 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  position: relative;
+  max-width: 1224px;
+  padding-left: calc((100vw - 1224px) / 2);
+  padding-right: calc((100vw - 1224px) / 2);
 }

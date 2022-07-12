@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import Hamburger from '../../components/Hamburger'
 import { createContext, useContext, useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
+import { Link } from 'react-router-dom';
 
 export const SelectContext = createContext();
 
@@ -27,12 +28,16 @@ const HiddenWrapper = styled.ul`
   padding: 8px 30px;
   
   li {
+    a {
+      font-family: BadaBoom;
+      font-size: 28px;
+      line-height: 30px;
+      color: #FFF;
+      margin: 10px 0;
+      text-decoration: none;
+    }
     text-align: center;
-    font-family: BadaBoom;
-    font-size: 28px;
-    line-height: 30px;
-    color: #FFF;
-    margin: 10px 0;
+
   }
 `
 
@@ -58,7 +63,7 @@ const HiddenMenu = ({data}) => {
     <HiddenWrapper ref={el}>
       {data.map((item, index) => {
         return (
-          <li key={index}>{item}</li>
+          <li key={index}><Link to={item}>{item}</Link></li>
         )
       })}
     </HiddenWrapper>

@@ -95,23 +95,61 @@ const Branch = styled.div`
 `
 
 const IntroSection = () => {
+  const container = useRef();
+  const titleEl = useRef();
+  const contentEl = useRef();
+  let q = gsap.utils.selector(container); 
+ 
+  useEffect(() => {
+    gsap.timeline()
+    .fromTo(titleEl.current, {
+      opacity: 0,
+      y: "+5px",
+      scale: 0.8
+    }, {
+      opacity: 1,
+      y: '0px',
+      scale: 1,
+      duration: 1
+    }, 1)
+    .fromTo(contentEl.current, {
+      opacity: 0,
+      y: "+5px",
+      scale: 0.8
+    }, {
+      opacity: 1,
+      y: '0px',
+      scale: 1,
+      duration: 1
+    }, 1.5)
+    .fromTo(q(".platform--item"), {
+      opacity: 0,
+      scale: 0.8
+    }, {
+      opacity: 1,
+      scale: 1,
+      duration: 1,
+      stagger: 0.5
+    }, 1.5)
+  }, [])
+
   return (
     <SectionWrapper>
       <StyledContainer fullVertical>
-        <InnerWrapp>
+        <InnerWrapp ref={container}>
           <PtoEarn>
-            <Title>
+            <Title ref={titleEl}>
               <Heading>PLAY TO EARN</Heading>
             </Title>
-            <Flex column>
+            <Flex column ref={contentEl}>
               <Text>Grab chillis and earn</Text>
               <Text>as you play!</Text>
             </Flex>
             <Platform>
               <Flex gap='18px'>
-                <Item bgurl='/images/platform/google.svg'></Item>
-                <Item bgurl='/images/platform/apple.svg'></Item>
-                <Item bgurl='/images/platform/pc.svg'></Item>
+                <Item bgurl='/images/platform/google.svg' className='platform--item'></Item>
+                <Item bgurl='/images/platform/apple.svg' className='platform--item'></Item>
+                <Item bgurl='/images/platform/pc.svg' className='platform--item'></Item>
               </Flex>
             </Platform>
           </PtoEarn>

@@ -28,6 +28,7 @@ const Intro = styled.div`
   span {
     color: #FFF;
     font-size: 18px;
+    font-family: GilroyMedium;
   }
 
   @media (min-width: 768px) {
@@ -74,14 +75,14 @@ const HomePage = () => {
     <Wrapper>
       <StyledContainer fullVertical>
         <Scene />
-        {/* <div style={{width: '100%', height: '100%', position: 'relative'}}>
+        <div style={{width: '100%', height: '100%', position: 'relative'}}>
           <Intro>
             <span>A metaverse with 24+</span>
             <span>different play to earn games</span>
           </Intro>
           <Coin />
           <PageMenuGroup />
-        </div> */}
+        </div>
         {/* <SceneWrapper>
           <Canvas drp={[1, 2]} camera={{ position: [25, 5, 15], fov: 20 }}>
             <Environment preset="dawn" />
@@ -92,7 +93,7 @@ const HomePage = () => {
             <OrbitControls />
           </Canvas>
         </SceneWrapper> */}
-        {/* <FireFlies count={10} /> */}
+        <FireFlies count={10} />
       </StyledContainer>
     </Wrapper>
   )

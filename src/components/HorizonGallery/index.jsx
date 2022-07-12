@@ -66,6 +66,8 @@ const HorizonGallery = (e) => {
       let previousInfoEl = qInfo(".previous--info");
       let nextInfoEl = qInfo(".next--info");
 
+      console.log("if", direction == "right")
+
       gsap.timeline()
         .to(
         (gsap.utils.selector(currentInfoEl))(".text"),
@@ -81,9 +83,9 @@ const HorizonGallery = (e) => {
         swapInfosClass(direction);
       })
         .fromTo(
-        direction === "right"
-        ? (gsap.utils.selector(previousInfoEl))(".text")
-        : (gsap.utils.selector(nextInfoEl))(".text"),
+        direction == "right"
+        ? (gsap.utils.selector(nextInfoEl))(".text")
+        : (gsap.utils.selector(previousInfoEl))(".text"),
         {
           opacity: 0,
           translateY: "40px",

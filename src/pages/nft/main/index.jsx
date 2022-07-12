@@ -1,6 +1,8 @@
+import { useRef, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import Container from '../../../components/Container'
 import Flex from '../../../components/Flex'
+import gsap from 'gsap'
 
 const SectionWrapper = styled.div`
   position: relative;
@@ -77,16 +79,43 @@ const BetStuff = styled.div`
 `
 
 const MainSection = () => {
+  const titleEl = useRef();
+  const contentEl = useRef();
+
+  useEffect(() => {
+    gsap.timeline()
+    .fromTo(titleEl.current, {
+      opacity: 0,
+      y: "+5px",
+      scale: 0.8
+    }, {
+      opacity: 1,
+      y: '0px',
+      scale: 1,
+      duration: 1
+    }, 1)
+    .fromTo(contentEl.current, {
+      opacity: 0,
+      y: "+5px",
+      scale: 0.8
+    }, {
+      opacity: 1,
+      y: '0px',
+      scale: 1,
+      duration: 1
+    }, 1.5)
+  }, [])
+
   return (
     <SectionWrapper>
       <Container>
         <Intro>
           <Flex column>
-            <Title>
+            <Title ref={titleEl}>
               <Heading>3000+UNIQUE</Heading>
               <Heading>NFT'S</Heading>
             </Title>
-            <Content>
+            <Content ref={contentEl}>
               <Text>Each one better than</Text>
               <Text>the other!</Text>
             </Content>

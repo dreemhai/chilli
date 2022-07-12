@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import styled from 'styled-components/macro'
 import gsap from 'gsap'
+import { Link } from 'react-router-dom'
 
 const Wrapper = styled.div`
   position: relative;
@@ -77,6 +78,12 @@ const Button = styled.div`
   left: 35%;
   cursor: pointer;
   z-index: 5;
+
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 
   @media (min-width: 768px) {
     width: 124px;
@@ -155,6 +162,7 @@ const Menu = ({swingRadius}) => {
           tl2.play(0)
         }}
       >
+        <Link to='/about'></Link>
       </Button>
       <Light ref={lightRef} />
     </MenuWrapper>
