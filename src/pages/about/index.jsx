@@ -99,12 +99,12 @@ const AboutPage = () => {
           </Branch>
           <Spider />
         </BranchWrapper> */}
-        <VideoSection />
+        {/* <VideoSection /> */}
         {/* <BetStuff>
           <img src="/images/about/deco.png" />
         </BetStuff> */}
-        <GamesSection />
-        <RoadMap />
+        {/* <GamesSection />
+        <RoadMap /> */}
       </PageWrapper>
   )
 }
