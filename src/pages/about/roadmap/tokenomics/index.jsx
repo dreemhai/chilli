@@ -7,18 +7,27 @@ const SectionWrapper = styled.div`
 `
 
 const InnerWrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 157px 0;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+    padding: 10px;
+
+    @media (min-width: 768px) {
+        padding: 157px 0;
+    }
 `
 
 const Heading = styled.h2`
   font-family: BadaBoom;
-  font-size: 96px;
   font-weight: 400;
-  line-height: 102px;
+  font-size: 52px;
+  line-height: 65px;
   color: #FFF;
   margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 96px;
+    line-height: 102px;
+  }
 `
 
 const Title = styled.div`
@@ -30,29 +39,47 @@ const Content = styled.div`
 `
 
 const Text = styled.span`
-    font-family: 'GilroyMedium';
+  padding: 0;
+  margin: 0;
+  font-family: GilroyLight;
+  font-size: 22px;
+  line-height: 29px;
+  color: #FFF;
+
+  @media (min-width: 768px) {
     font-size: 32px;
-    line-height: 38px;
-    color: #FFF;
+    line-height: 42px;    
+  } 
 `
 
 const ChartWrapper = styled.div`
     position: relative;
+    width: 100%;
+    margin-top: 80px;
+
+    display: flex;
+    justify-content: flex-end;
 `
 
 const PieChart = styled.div`
+    width: 80%;
+
+    img {
+        width: 100%;
+    }
 `
 
 const PartDesc = styled.div`
    position: absolute;
-   top: ${props => props.top ? props.top : "0"};
-   left: ${props => props.left ? props.left : "0"};
+   width: 80px;
+   top: ${props => props.mtop ? props.mtop : "0"};
+   left: ${props => props.mleft ? props.mleft : "0"};
 
    span {
     color: #FFF;
     font-family: 'GilroyLight';
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 14px;
+    line-height: 15px;
    }
 `
 
@@ -85,49 +112,49 @@ const Tokenomics = () => {
                             <PieChart>
                                 <img src='/images/about/roadmap/pie-chart.png' />
                             </PieChart>
-                            <PartDesc top='3%' left='-17%'>
+                            <PartDesc top='3%' left='-17%' mtop='-6%' mleft='0%'>
                                 <Flex column alignEnd>
                                     <span>18%</span>
-                                    <span>Research &#38; Development</span>
+                                    <span style={{textAlign: 'right'}}>Research &#38; Development</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='15%' left='-19%'>
+                            <PartDesc top='15%' left='-19%' mtop='9%' mleft='-6%'>
                                 <Flex column alignEnd>
                                     <span>10%</span>
-                                    <span>Team &#38; Advisors</span>
+                                    <span style={{textAlign: 'right'}}>Team &#38; Advisors</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='30%' left='-2%'>
+                            <PartDesc top='30%' left='-2%' mtop='27%' mleft='0%'>
                                 <Flex column alignEnd>
                                     <span>20%</span>
                                     <span>Treasury</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='41%' left='17%'>
+                            <PartDesc top='41%' left='17%' mtop='40%' mleft='19%'>
                                 <Flex column alignEnd>
                                     <span>2.5%</span>
                                     <span>Airdrops</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='20%' left='58%'>
+                            <PartDesc top='20%' left='58%' mtop='17%' mleft='65%'>
                                 <Flex column>
                                     <span>30%</span>
                                     <span>Farming&nbsp;/&nbsp;Staking</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='9%' left='60%'>
+                            <PartDesc top='9%' left='60%' mtop='9%' mleft='69%'>
                                 <Flex column>
                                     <span>2.5%</span>
                                     <span>Bounties</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='4%' left='43%'>
+                            <PartDesc top='4%' left='43%' mtop='1%' mleft='53%'>
                                 <Flex column>
                                     <span>15%</span>
                                     <span>Private&nbsp;Rounds</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='-2%' left='40%'>
+                            <PartDesc top='-2%' left='40%' mtop='-7%' mleft='50%'>
                                 <Flex column>
                                     <span>2%</span>
                                     <span>Public&nbsp;&#123;Lunchpads&#125;</span>
@@ -136,12 +163,12 @@ const Tokenomics = () => {
                         </ChartWrapper>
                     </Flex>
                 </InnerWrapper>
-                <Cloud top='0px' left='0px'>
+                {/* <Cloud top='0px' left='0px'>
                     <img src='/images/about/roadmap/clouds/1.png' />
                 </Cloud>
                 <Cloud top='72%' left='0px'>
                     <img src='/images/about/roadmap/clouds/2.png' />
-                </Cloud>
+                </Cloud> */}
             </Container>
         </SectionWrapper>
     )

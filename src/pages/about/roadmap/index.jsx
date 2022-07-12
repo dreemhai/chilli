@@ -32,8 +32,8 @@ const RoadMap = () => {
   return (
     <SectionWrapper>
       <MapCarousel />
-      {/* <Tokenomics />
-      <Partners /> */}
+      <Tokenomics />
+      {/* <Partners /> */}
     </SectionWrapper>
   )
 };
