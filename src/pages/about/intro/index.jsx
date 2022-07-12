@@ -16,8 +16,8 @@ const SectionWrapper = styled.div`
   overflow: hidden;
 `
 
-const StyledContainer = styled.div`
-  height: 100%;
+const StyledContainer = styled(Container)`
+  overflow: hidden;
 `
 
 const PtoEarn = styled.div`
@@ -99,16 +99,16 @@ const SpiderWrapper = styled.div`
   transform: translate(50px, 0);
 `
 
-const BetStuff = styled.div`
-  position: relative;
-  width: 100%;
-  img {
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    transform: translate(0, -50%);
-  }
-`
+// const BetStuff = styled.div`
+//   position: relative;
+//   width: 100%;
+//   img {
+//     width: 100%;
+//     position: absolute;
+//     z-index: 2;
+//     transform: translate(0, -50%);
+//   }
+// `
 
 const StyledSpider = styled.div`
   position: absolute;
@@ -119,6 +119,21 @@ const StyledSpider = styled.div`
     width: 100%;
     height: auto;
   }
+`
+
+const BetStuff = styled.div`
+  width: 100%;
+	position: absolute;
+  aspect-ratio: 3.15;
+  bottom: 0;
+  transform: translate(0, 50%);
+
+	display: flex;
+	justify-content: center;
+	background-image: url('/images/about/bet-stuff.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 `
 
 const Spider = () => {
@@ -157,7 +172,7 @@ const Spider = () => {
 const IntroSection = () => {
   return (
     <SectionWrapper>
-      <Container fullVertical>
+      <StyledContainer fullVertical>
         <InnerWrapp>
           <PtoEarn>
             <Title>
@@ -204,7 +219,7 @@ const IntroSection = () => {
            }} 
           imgurl='/images/about/man.png' />
         </InnerWrapp>
-      </Container>
+      </StyledContainer>
       {/* <BranchWrapper>
         <Branch>
           <img src='/images/about/branch.png' />

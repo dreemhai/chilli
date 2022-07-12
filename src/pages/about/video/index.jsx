@@ -5,7 +5,6 @@ import teaserVideo from '../../../assets/video/Chilliswap_Teaser.mp4'
 const SectionWrapper = styled.div`
 	position: relative;
 	z-index: 1;
-	overflow: hidden;
 `;
 
 const Video = styled.video`
@@ -36,6 +35,27 @@ const MuteBtn = styled.div`
 		bottom: 100px;
 		right: 100px;
 	}
+`
+
+
+const BetStuff = styled.div`
+  width: 100%;
+	position: absolute;
+  aspect-ratio: 10.8;
+  top: 0;
+  transform: translate(0, -42%);
+
+	display: flex;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	/* justify-content: center;
+	background-image: url('/images/about/branch.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; */
 `
 
 const VideoSection = () => {
@@ -79,6 +99,9 @@ const VideoSection = () => {
       </Video>
 			<MuteBtn onClick={() => handleMute()} muted={muted}>
 			</MuteBtn>
+      <BetStuff>
+				<img src='/images/about/branch.png' />
+			</BetStuff>
     </SectionWrapper>
   );
 };
