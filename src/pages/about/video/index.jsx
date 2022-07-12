@@ -18,16 +18,24 @@ const Video = styled.video`
 
 const MuteBtn = styled.div`
 	position: absolute;
-	bottom: 100px;
-	right: 100px;
 	z-index: 2;
-	width: 36px;
-	height: 30px;
-	background-image: url('/images/about/mute.svg');
+	width: 25px;
+	height: 22px;
+	bottom: 30px;
+	right: 30px;
+
+	background-image: url(${props => props.muted ? '/images/about/unmute.png' : '/images/about/mute.svg'});
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-size: center;
 	cursor: pointer;
+
+	@media (min-width: 768px) {
+		width: 36px;
+		height: 30px;
+		bottom: 100px;
+		right: 100px;
+	}
 `
 
 const VideoSection = () => {
@@ -69,7 +77,7 @@ const VideoSection = () => {
       <Video ref={videoRef} loop muted={muted}>
         <source src={teaserVideo} type="video/mp4" />
       </Video>
-			<MuteBtn onClick={() => handleMute()}>
+			<MuteBtn onClick={() => handleMute()} muted={muted}>
 			</MuteBtn>
     </SectionWrapper>
   );
