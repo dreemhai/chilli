@@ -129,7 +129,7 @@ const MapCarousel = () => {
               showDots={true}
               ssr={true}
               infinite={true}
-              autoPlay={false}
+              autoPlay={true}
               arrows={false}
             >
               <Slider>
