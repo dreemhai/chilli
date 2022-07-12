@@ -59,69 +59,75 @@ const LinkFlex = styled(Flex)`
   }  
 `
 
+const FooterWrapper = styled.div`
+  background: #000;
+`
+
 const Footer = () => {
   return (
-    <Container>
-      <InnerWrapper>
-        <LogoFlex justifyBetween alignCenter>
-          <Logo>
-            <a imgurl='/images/logo.png'></a>
-          </Logo>
-          <Flex column>
-            <Link>
-              <Text>Privacy Policy</Text>
-            </Link>
-            <Link>
-              <Text>Terms of Services</Text>
-            </Link>
-          </Flex>
-        </LogoFlex>
-        <LinkFlex justifyBetween>
-          <Flex column>
-            <Link>
-              <Text title="true">Learn</Text>
-            </Link>
-            <Link>
-              <Text>Create</Text>
-            </Link>
-            <Link>
-              <Text>Collect</Text>
-            </Link>
-            <Link>
-              <Text>Sell</Text>
-            </Link>
-          </Flex>
-          <Flex column>
-            <Link>
-              <Text title="true">Company</Text>
-            </Link>
-            <Link>
-              <Text>Careers</Text>
-            </Link>
-            <Link>
-              <Text>Help&nbsp;Center</Text>
-            </Link>
-            <Link>
-              <Text>Subscribe</Text>
-            </Link>
-          </Flex>
-          <Flex column>
-            <Link>
-              <Text title="true">Connect</Text>
-            </Link>
-            <Link>
-              <Text>Twitter</Text>
-            </Link>
-            <Link>
-              <Text>Instagram</Text>
-            </Link>
-            <Link>
-              <Text>Youtube</Text>
-            </Link>
-          </Flex>
-        </LinkFlex>
-      </InnerWrapper>
-    </Container>
+    <FooterWrapper>
+      <Container>
+        <InnerWrapper>
+          <LogoFlex justifyBetween alignCenter>
+            <Logo>
+              <a imgurl='/images/logo.png'></a>
+            </Logo>
+            <Flex column>
+              <Link>
+                <Text>Privacy Policy</Text>
+              </Link>
+              <Link>
+                <Text>Terms of Services</Text>
+              </Link>
+            </Flex>
+          </LogoFlex>
+          <LinkFlex justifyBetween>
+            <Flex column>
+              <Link>
+                <Text title="true">Learn</Text>
+              </Link>
+              <Link>
+                <Text>Create</Text>
+              </Link>
+              <Link>
+                <Text>Collect</Text>
+              </Link>
+              <Link>
+                <Text>Sell</Text>
+              </Link>
+            </Flex>
+            <Flex column>
+              <Link>
+                <Text title="true">Company</Text>
+              </Link>
+              <Link>
+                <Text>Careers</Text>
+              </Link>
+              <Link>
+                <Text>Help&nbsp;Center</Text>
+              </Link>
+              <Link>
+                <Text>Subscribe</Text>
+              </Link>
+            </Flex>
+            <Flex column>
+              <Link>
+                <Text title="true">Connect</Text>
+              </Link>
+              <Link>
+                <Text>Twitter</Text>
+              </Link>
+              <Link>
+                <Text>Instagram</Text>
+              </Link>
+              <Link>
+                <Text>Youtube</Text>
+              </Link>
+            </Flex>
+          </LinkFlex>
+        </InnerWrapper>
+      </Container>
+    </FooterWrapper>
   )
 }
 

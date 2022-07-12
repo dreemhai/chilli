@@ -283,10 +283,4 @@ button:focus {
     --card-width: 352px;
     --card-height: 346px;
   }
-}
-@media only screen and (min-width: 1440px) {
-  :root {
-    --card-width: 492px;
-    --card-height: 486px;
-  }
 }/*# sourceMappingURL=style.css.map */

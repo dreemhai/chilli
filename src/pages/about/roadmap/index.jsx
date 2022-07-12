@@ -2,6 +2,7 @@ import Tokenomics from "./tokenomics";
 import Partners from "./partners";
 import MapCarousel from './mapcarousel';
 import styled from "styled-components/macro";
+import Footer from "../../footer"
 
 const SectionWrapper = styled.div`
   background: linear-gradient(180deg, #62D5E6 0%, #DBFBD5 100%);
@@ -33,7 +34,8 @@ const RoadMap = () => {
     <SectionWrapper>
       <MapCarousel />
       <Tokenomics />
-      {/* <Partners /> */}
+      <Partners />
+      <Footer />
     </SectionWrapper>
   )
 };
