@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import styled from "styled-components/macro";
 import teaserVideo from '../../../assets/video/Chilliswap_Teaser.mp4'
+import gsap from "gsap";
 
 const SectionWrapper = styled.div`
 	position: relative;
-	z-index: 1;
+	z-index: 3;
 `;
 
 const Video = styled.video`
@@ -51,12 +52,90 @@ const BetStuff = styled.div`
 		width: 100%;
 		height: 100%;
 	}
-	/* justify-content: center;
-	background-image: url('/images/about/branch.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; */
 `
+
+
+const BetStuff2 = styled.div`
+  width: 100%;
+	position: absolute;
+  aspect-ratio: 3.39;
+  bottom: 0;
+  transform: translate(0, 50%);
+
+	display: flex;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+`
+
+
+const SpiderWrapper = styled.div`
+  position: absolute;
+	top: 0;
+  transform: translate(50px, 0);
+`
+
+// const BetStuff = styled.div`
+//   position: relative;
+//   width: 100%;
+//   img {
+//     width: 100%;
+//     position: absolute;
+//     z-index: 2;
+//     transform: translate(0, -50%);
+//   }
+// `
+
+const StyledSpider = styled.div`
+  position: absolute;
+  width: 20px;
+  height: auto;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+	@media (min-width: 768px) {
+		width: 70px;
+	}
+`
+
+const Spider = () => {
+  const el = useRef();
+  const tl = gsap.timeline({repeat: -1});
+  
+  useEffect(() => {
+    tl.to(el.current, {
+      y: '100px',
+      duration: 1
+    })
+    .to(el.current, {
+      y: '-=30px',
+      duration: 0.5
+    })
+    .to(el.current, {
+      y: '+=60px',
+      duration: 1.2
+    })
+    .to(el.current, {
+      y: '0px',
+      duration: 5
+    })
+  }, [])
+
+
+  return (
+    <SpiderWrapper>
+      <StyledSpider ref={el}>
+        <img src='/images/about/spider.svg' />
+      </StyledSpider>
+    </SpiderWrapper>
+  )
+}
+
 
 const VideoSection = () => {
 	const el = useRef();
@@ -102,6 +181,10 @@ const VideoSection = () => {
       <BetStuff>
 				<img src='/images/about/branch.png' />
 			</BetStuff>
+			<BetStuff2>
+				<img src='/images/about/deco.png' />
+			</BetStuff2>
+			<Spider />
     </SectionWrapper>
   );
 };
