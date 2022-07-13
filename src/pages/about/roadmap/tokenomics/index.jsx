@@ -1,6 +1,9 @@
 import styled from 'styled-components/macro'
 import Container from '../../../../components/Container'
 import Flex from '../../../../components/Flex'
+import { useRef } from 'react'
+import gsap from 'gsap'
+import { useEffect } from 'react'
 
 const SectionWrapper = styled.div`
     padding-top: 100px;
@@ -88,6 +91,7 @@ const PartDesc = styled.div`
    width: 80px;
    top: ${props => props.mtop ? props.mtop : "0"};
    left: ${props => props.mleft ? props.mleft : "0"};
+   cursor: pointer;
 
    span {
     color: #FFF;
@@ -116,10 +120,42 @@ const Cloud = styled.div`
 `
 
 const Tokenomics = () => {
+   const container = useRef();
+   let q = gsap.utils.selector(container); 
+
+   useEffect(() => {
+    function mouseOver(item) {
+        let span = (gsap.utils.selector(item))("span");
+        gsap.to(span, {
+            scale: 1.1,
+            color: '#9363e1',
+        })
+    }
+
+    function mouseLeave(item) {
+        let span = (gsap.utils.selector(item))("span");
+        gsap.to(span, {
+            scale: 1,
+            color: '#FFF',
+        })
+    }
+    q('.part--desc').forEach((item, index) => {
+        item.addEventListener('mouseover', () => mouseOver(item))
+
+        item.addEventListener('mouseleave', () => mouseLeave(item))
+    })
+
+    return q('.part--desc').forEach((item, index) => {
+        item.removeEventListener('mouseover', () => mouseOver(item))
+
+        item.removeEventListener('mouseleave', () => mouseLeave(item))
+    })
+   }, [])
+
     return (
         <SectionWrapper>
             <Container>
-                <InnerWrapper>
+                <InnerWrapper ref={container}>
                     <Flex column justifyCenter>
                         <Title>
                             <Heading>
@@ -137,49 +173,49 @@ const Tokenomics = () => {
                             <PieChart>
                                 <img src='/images/about/roadmap/pie-chart.png' />
                             </PieChart>
-                            <PartDesc top='1%' left='-9%' mtop='-6%' mleft='0%'>
+                            <PartDesc className='part--desc' top='1%' left='-9%' mtop='-6%' mleft='0%'>
                                 <Flex column alignEnd>
                                     <span>18%</span>
                                     <span style={{textAlign: 'right'}}>Research &#38; Development</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='15%' left='-6%' mtop='9%' mleft='-6%'>
+                            <PartDesc className='part--desc' top='15%' left='-6%' mtop='9%' mleft='-6%'>
                                 <Flex column alignEnd>
                                     <span>10%</span>
                                     <span style={{textAlign: 'right'}}>Team &#38; Advisors</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='30%' left='12%' mtop='27%' mleft='0%'>
+                            <PartDesc className='part--desc' top='30%' left='12%' mtop='27%' mleft='0%'>
                                 <Flex column alignEnd>
                                     <span>20%</span>
                                     <span>Treasury</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='41%' left='30%' mtop='40%' mleft='19%'>
+                            <PartDesc className='part--desc' top='41%' left='30%' mtop='40%' mleft='19%'>
                                 <Flex column alignEnd>
                                     <span>2.5%</span>
                                     <span>Airdrops</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='20%' left='66%' mtop='17%' mleft='65%'>
+                            <PartDesc className='part--desc' top='20%' left='66%' mtop='17%' mleft='65%'>
                                 <Flex column>
                                     <span>30%</span>
                                     <span>Farming&nbsp;/&nbsp;Staking</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='10%' left='68%' mtop='9%' mleft='69%'>
+                            <PartDesc className='part--desc' top='10%' left='68%' mtop='9%' mleft='69%'>
                                 <Flex column>
                                     <span>2.5%</span>
                                     <span>Bounties</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='4%' left='55%' mtop='1%' mleft='53%'>
+                            <PartDesc className='part--desc' top='4%' left='55%' mtop='1%' mleft='53%'>
                                 <Flex column>
                                     <span>15%</span>
                                     <span>Private&nbsp;Rounds</span>
                                 </Flex>
                             </PartDesc>
-                            <PartDesc top='-2%' left='54%' mtop='-7%' mleft='50%'>
+                            <PartDesc className='part--desc' top='-2%' left='54%' mtop='-7%' mleft='50%'>
                                 <Flex column>
                                     <span>2%</span>
                                     <span>Public&nbsp;&#123;Lunchpads&#125;</span>

@@ -97,7 +97,7 @@ const FireFlies = ({count}) => {
 
   for (let i = 0; i < count; i += 1) {
     tweens.push(
-      <Fly />
+      <Fly key={i} />
     )
   }
 

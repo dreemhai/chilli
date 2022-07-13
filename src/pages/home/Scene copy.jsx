@@ -28,7 +28,7 @@ function Model({ ...props }) {
     actions.current.idle.play()
     return () => animations.forEach((clip) => mixer.uncacheClip(clip))
   }, [])
-  
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
@@ -2127,7 +2127,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane184.geometry}
             material={materials.phong1}
-            position={[1, -0.92, -6.85]}
+            position={[0.33, 2.35, 0.08]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2137,7 +2137,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane185.geometry}
             material={materials.phong1}
-            position={[1, 0.7, -6.22]}
+            position={[0.48, 3.99, -0.08]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2147,7 +2147,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane186.geometry}
             material={materials.phong1}
-            position={[-0.77, 0.7, -5.35]}
+            position={[-0.92, 3.64, 0.06]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2157,7 +2157,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane187.geometry}
             material={materials.phong1}
-            position={[-0.77, -1.26, -5.35]}
+            position={[-1.27, 1.8, -0.05]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2167,7 +2167,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane188.geometry}
             material={materials.phong1}
-            position={[1.9, -2.19, -8.08]}
+            position={[0.98, 1.67, 0.01]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2177,7 +2177,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane189.geometry}
             material={materials.phong1}
-            position={[0.27, 0.95, -7.13]}
+            position={[-0.23, 4.14, -0.23]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2197,7 +2197,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane190.geometry}
             material={materials.phong1}
-            position={[1.36, -0.5, -6.21]}
+            position={[0.79, 2.71, 0]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2207,7 +2207,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane191.geometry}
             material={materials.phong1}
-            position={[-0.56, 0.77, -6.44]}
+            position={[-2.56, 1.58, -4.9]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2217,7 +2217,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane192.geometry}
             material={materials.phong1}
-            position={[2.03, -1.82, -6.47]}
+            position={[1.64, 1.18, 0.09]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2227,7 +2227,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane193.geometry}
             material={materials.phong1}
-            position={[0.34, -0.29, -4.36]}
+            position={[-2.45, 2.62, 0.04]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2237,7 +2237,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane194.geometry}
             material={materials.phong1}
-            position={[2.65, -0.6, -5.89]}
+            position={[1.45, 2.63, 0.08]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2247,7 +2247,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane195.geometry}
             material={materials.phong1}
-            position={[1.96, -1.45, -6.35]}
+            position={[1.24, 2.35, 0.06]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -2257,7 +2257,7 @@ function Model({ ...props }) {
             receiveShadow
             geometry={nodes.trees2pPlane196.geometry}
             material={materials.phong1}
-            position={[3.8, -1.54, -6.36]}
+            position={[1.8, 1.51, 0.16]}
             rotation={[1.57, -1.02, 2.16]}
             scale={[0.16, 0.1, 0.2]}
           />
@@ -3827,19 +3827,142 @@ function Model({ ...props }) {
             scale={10}
           />
         </group>
-        <group name="name_board" rotation={[Math.PI / 2, 0, 0]} scale={0.01} />
+        <group name="name_board" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+          <mesh
+            name="Corrente001_0"
+            castShadow
+            receiveShadow
+            geometry={nodes.Corrente001_0.geometry}
+            material={materials.Corrente}
+            position={[2.25, 4.87, -1.04]}
+            rotation={[-3.13, 0.01, 0.9]}
+            scale={[0.01, 0, 0.1]}
+          />
+          <mesh
+            name="Corrente_0"
+            castShadow
+            receiveShadow
+            geometry={nodes.Corrente_0.geometry}
+            material={materials.Corrente}
+            position={[1.96, 5.24, -0.94]}
+            rotation={[-3.13, 0.01, 0.9]}
+            scale={[0.01, 0, 0.1]}
+          />
+          <mesh
+            name="Base_0"
+            castShadow
+            receiveShadow
+            geometry={nodes.Base_0.geometry}
+            material={materials.Base}
+            position={[1.82, 5.43, -0.85]}
+            rotation={[Math.PI, 0, 0.9]}
+            scale={[0.31, 0.02, 0.07]}
+          />
+          <mesh
+            name="Placa_0"
+            castShadow
+            receiveShadow
+            geometry={nodes.Placa_0.geometry}
+            material={materials.Placa}
+            position={[1.98, 5.25, -1.04]}
+            rotation={[3.13, -0.01, -2.17]}
+            scale={[0.37, 0.01, 0.11]}
+          />
+        </group>
         <group
           name="name_board1"
           position={[0.08, 0, 0.06]}
           rotation={[1.59, 0.01, 3.05]}
           scale={0.01}
-        />
+        >
+          <mesh
+            name="Corrente001_0001"
+            castShadow
+            receiveShadow
+            geometry={nodes.Corrente001_0001.geometry}
+            material={materials.Corrente}
+            position={[2.11, 5.36, -1]}
+            rotation={[-3.13, 0.01, 0.9]}
+            scale={[0.01, 0, 0.1]}
+          />
+          <mesh
+            name="Corrente_0001"
+            castShadow
+            receiveShadow
+            geometry={nodes.Corrente_0001.geometry}
+            material={materials.Corrente}
+            position={[1.82, 5.73, -0.91]}
+            rotation={[-3.13, 0.01, 0.9]}
+            scale={[0.01, 0, 0.1]}
+          />
+          <mesh
+            name="Base_0001"
+            castShadow
+            receiveShadow
+            geometry={nodes.Base_0001.geometry}
+            material={materials.Base}
+            position={[1.68, 5.92, -0.82]}
+            rotation={[Math.PI, 0, 0.9]}
+            scale={[0.31, 0.02, 0.07]}
+          />
+          <mesh
+            name="Placa_0001"
+            castShadow
+            receiveShadow
+            geometry={nodes.Placa_0001.geometry}
+            material={materials.Placa}
+            position={[2.11, 5.36, -1]}
+            rotation={[-3.13, 0.01, 0.9]}
+            scale={[0.37, 0.01, 0.11]}
+          />
+        </group>
         <group
           name="name_board2"
           position={[0.07, 0, 0.04]}
           rotation={[1.59, 0.01, 3.05]}
           scale={0.01}
-        />
+        >
+          <mesh
+            name="Corrente001_0002"
+            castShadow
+            receiveShadow
+            geometry={nodes.Corrente001_0002.geometry}
+            material={materials.Corrente}
+            position={[2.25, 4.87, -1.04]}
+            rotation={[-3.13, 0.01, 0.9]}
+            scale={[0.01, 0, 0.1]}
+          />
+          <mesh
+            name="Corrente_0002"
+            castShadow
+            receiveShadow
+            geometry={nodes.Corrente_0002.geometry}
+            material={materials.Corrente}
+            position={[1.96, 5.24, -0.94]}
+            rotation={[-3.13, 0.01, 0.9]}
+            scale={[0.01, 0, 0.1]}
+          />
+          <mesh
+            name="Base_0002"
+            castShadow
+            receiveShadow
+            geometry={nodes.Base_0002.geometry}
+            material={materials.Base}
+            position={[1.82, 5.43, -0.85]}
+            rotation={[Math.PI, 0, 0.9]}
+            scale={[0.31, 0.02, 0.07]}
+          />
+          <mesh
+            name="Placa_0002"
+            castShadow
+            receiveShadow
+            geometry={nodes.Placa_0002.geometry}
+            material={materials.Placa}
+            position={[2.25, 4.87, -1.04]}
+            rotation={[-3.13, 0.01, 0.9]}
+            scale={[0.37, 0.01, 0.11]}
+          />
+        </group>
         <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <primitive object={nodes.trees2mixamorigHips} />
           <primitive object={nodes.trees2joint1} />
@@ -4125,7 +4248,7 @@ function Model({ ...props }) {
           receiveShadow
           geometry={nodes.trees2pPlane198001.geometry}
           material={materials.phong1}
-          position={[0, 0.03, -0.02]}
+          position={[0, -0.05, 0.03]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}
         />
@@ -4135,7 +4258,7 @@ function Model({ ...props }) {
           receiveShadow
           geometry={nodes.trees2pPlane210.geometry}
           material={materials.TREES}
-          position={[0, 0.03, -0.01]}
+          position={[0, -0.04, 0.02]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}
         />
@@ -4145,7 +4268,7 @@ function Model({ ...props }) {
           receiveShadow
           geometry={nodes.trees2pPlane211.geometry}
           material={materials.TREES}
-          position={[0, 0.03, -0.01]}
+          position={[0, 0.01, 0]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}
         />

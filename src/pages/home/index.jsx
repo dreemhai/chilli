@@ -27,14 +27,15 @@ const Intro = styled.div`
 
   span {
     color: #FFF;
-    font-size: 18px;
+    font-size: 24px;
     font-family: GilroyMedium;
   }
 
   @media (min-width: 768px) {
     transform: translate(35px, -50%);
     span {
-      font-size: 24px;
+      font-size: 32px;
+      line-height: 38px;
     }
   }
 `
