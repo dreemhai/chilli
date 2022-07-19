@@ -16,8 +16,8 @@ const AppRoutes = () => {
       <Routes>
         <Route  oute path="/home" element={<HomePage />}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
-        <Route path="/nft" element={<NFTPage />}></Route>
-        <Route path="*" element={<Navigate to="/nft" replace />} />
+        <Route path="/nfts" element={<NFTPage />}></Route>
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </MainLayout>
   )
