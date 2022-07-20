@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import React, { useRef, useState, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useGLTF, useAnimations, OrbitControls, Environment } from "@react-three/drei";
+import { useGLTF, useAnimations, OrbitControls, Environment, Loader } from "@react-three/drei";
 import styled from 'styled-components/macro';
 
 import Fire from "./Fire"
@@ -4241,6 +4241,7 @@ const Scene = (props) => {
           {/* <OrbitControls /> */}
         </Suspense>
       </Canvas>
+      <Loader />
     </SceneWrapper>
   )
 }

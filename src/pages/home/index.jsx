@@ -65,36 +65,32 @@ const StyledContainer = styled(Container)`
   height: 100%;
 `
 
-function Loader() {
-  const { progress } = useProgress()
-  return <Html center>{progress} % loaded</Html>
-}
-
-
 const HomePage = () => {
   return (
     <Wrapper>
       <StyledContainer fullVertical>
-        <Scene />
-        <div style={{width: '100%', height: '100%', position: 'relative'}}>
-          <Intro>
-            <span>A metaverse with 24+</span>
-            <span>different play to earn games</span>
-          </Intro>
-          <Coin />
-          <PageMenuGroup />
-        </div>
-        {/* <SceneWrapper>
-          <Canvas drp={[1, 2]} camera={{ position: [25, 5, 15], fov: 20 }}>
-            <Environment preset="dawn" />
-            <ambientLight intensity={0.5} />
-            <Suspense fallback={<Loader />}>
-              <Scene scale={100} />
-            </Suspense>
-            <OrbitControls />
-          </Canvas>
-        </SceneWrapper> */}
-        <FireFlies count={10} />
+      {/* <PreLoader /> */}
+          <Scene />
+          <div style={{width: '100%', height: '100%', position: 'relative'}}>
+            <Intro>
+              <span>An interconnected world of unique game</span>
+              <span>experiences involving customized avatars usable in</span>
+              <span>25+ games in a single Play-to-Earn Ecosystem</span>
+            </Intro>
+            <Coin />
+            <PageMenuGroup />
+          </div>
+          {/* <SceneWrapper>
+            <Canvas drp={[1, 2]} camera={{ position: [25, 5, 15], fov: 20 }}>
+              <Environment preset="dawn" />
+              <ambientLight intensity={0.5} />
+              <Suspense fallback={<Loader />}>
+                <Scene scale={100} />
+              </Suspense>
+              <OrbitControls />
+            </Canvas>
+          </SceneWrapper> */}
+          <FireFlies count={10} />
       </StyledContainer>
     </Wrapper>
   )
