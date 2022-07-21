@@ -165,7 +165,7 @@ const Menu = ({swingRadius}) => {
           tl2.play(0)
         }}
       >
-        <Link to='/nft'></Link>
+        <Link to='/nfts'></Link>
       </Button>
       <Light ref={lightRef} />
     </MenuWrapper>

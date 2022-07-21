@@ -82,10 +82,9 @@ const HomePage = () => {
   return (
     <Wrapper>
       <StyledContainer fullVertical>
-        <Suspense fallback={<LoadScreen><span style={{zIndex: '10', color: '#000'}}>Loading...</span></LoadScreen>}>
       {/* <PreLoader /> */}
           <Scene />
-          {/* <div style={{width: '100%', height: '100%', position: 'relative'}}>
+          <div style={{width: '100%', height: '100%', position: 'relative'}}>
             <Intro>
               <span>An interconnected world of unique game</span>
               <span>experiences involving customized avatars usable in</span>
@@ -93,7 +92,7 @@ const HomePage = () => {
             </Intro>
             <Coin />
             <PageMenuGroup />
-          </div> */}
+          </div>
           {/* <SceneWrapper>
             <Canvas drp={[1, 2]} camera={{ position: [25, 5, 15], fov: 20 }}>
               <Environment preset="dawn" />
@@ -105,7 +104,6 @@ const HomePage = () => {
             </Canvas>
           </SceneWrapper> */}
           <FireFlies count={10} />
-        </Suspense>
       </StyledContainer>
     </Wrapper>
   )
