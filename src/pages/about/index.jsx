@@ -10,6 +10,7 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 
 const PageWrapper = styled.div`
+  overflow: hidden;
 `
 
 
