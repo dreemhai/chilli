@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 
 const Intro = styled.div`
   position: absolute;
-  top: 60%;
+  top: 55%;
   transform: translate(10px, -50%);
   display: flex;
   flex-direction: column;
