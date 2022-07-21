@@ -7,6 +7,16 @@ import "./style.css"
 
 gsap.registerPlugin(ScrollTrigger);
 
+const BuyButton = styled(Button)`
+  padding: 2px 24px; 
+  font-size: 20px;
+
+  @media (min-width: 768px) {
+    padding: 6px 32px;
+    font-size: 28px;
+  }
+`
+
 
 const HorizonGallery = (e) => {
     const cardsContainer = useRef();
@@ -170,7 +180,7 @@ const HorizonGallery = (e) => {
 
         <div className="gallery__footer">
           <div className="button__wrapper">
-            <Button>PLAY NOW</Button>
+            <BuyButton>PLAY NOW</BuyButton>
           </div>
         </div>
     </div>

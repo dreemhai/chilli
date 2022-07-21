@@ -9,7 +9,7 @@
 .gallery__wrapper {
     position: relative;
 	width: 100%;
-	height: 700px;
+	height: 800px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -58,7 +58,7 @@
 .gallery__footer {
     position: absolute;
     width: 100%;
-		bottom: 17%;
+		bottom: 20%;
 
 		@media (min-width: 768px) {
 			bottom: 20%;			
@@ -203,7 +203,7 @@ button {
 
 .infoList {
 	position: absolute;
-		bottom: 17%;
+		bottom: 20%;
     right: 8%;
 
 		@media (min-width: 768px) {
@@ -295,8 +295,8 @@ button {
 	.description {
 		--text-size-offset: 0.065;
 			font-family: GilroyLight;
-			font-size: 20px;
-			line-height: 21px;
+			font-size: 14px;
+			line-height: 17px;
 			margin: 0;
 			text-align: right;
 
