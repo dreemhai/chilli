@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro';
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
@@ -8,6 +8,7 @@ import Container from '../../components/Container';
 import FireFlies from '../../components/FireFlies';
 import PageMenuGroup from '../../components/PageMenuGroup';
 // import Scene from "./Scene"
+import bgVideo from "../../video/home.mp4";
 import './style.css';
 
 const Scene = React.lazy(() => import("./Scene"));
@@ -79,11 +80,28 @@ const LoadScreen = styled.div`
 `
 
 const HomePage = () => {
+  const [isMobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone/i.test(
+        navigator.userAgent
+      )
+    ) {
+      setMobile(true);
+    }
+  }, []);
+
   return (
     <Wrapper>
       <StyledContainer fullVertical>
       {/* <PreLoader /> */}
-          <Scene />
+      {isMobile ? 
+        <video autoPlay muted loop id="video">
+        <source src={bgVideo} type="video/mp4" />
+      </video> :
+      <Scene />
+    }
           <div style={{width: '100%', height: '100%', position: 'relative'}}>
             <Intro>
               <span>An interconnected world of unique game</span>
@@ -93,6 +111,7 @@ const HomePage = () => {
             <Coin />
             <PageMenuGroup />
           </div>
+
           {/* <SceneWrapper>
             <Canvas drp={[1, 2]} camera={{ position: [25, 5, 15], fov: 20 }}>
               <Environment preset="dawn" />
@@ -103,6 +122,7 @@ const HomePage = () => {
               <OrbitControls />
             </Canvas>
           </SceneWrapper> */}
+
           <FireFlies count={10} />
       </StyledContainer>
     </Wrapper>
