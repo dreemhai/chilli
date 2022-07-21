@@ -143,6 +143,7 @@ const BgImg = styled.div`
   justify-content: center;
 
   @media (max-width: 767px) {
+    top: 44%;
     img {
       width: 100%;
     }
