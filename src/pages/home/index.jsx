@@ -31,7 +31,7 @@ const Intro = styled.div`
 
   span {
     color: #FFF;
-    font-size: 24px;
+    font-size: 16px;
     font-family: GilroyMedium;
   }
 
@@ -111,8 +111,9 @@ const HomePage = () => {
           <div style={{width: '100%', height: '100%', position: 'relative'}}>
             <Intro>
               <span>An interconnected world of unique game</span>
-              <span>experiences involving customized avatars usable in</span>
-              <span>25+ games in a single Play-to-Earn Ecosystem</span>
+              <span>experiences involving customized</span>
+              <span>avatars usable in <b>25+ games</b> in a single</span>
+              <span> Play-to-Earn Ecosystem</span>
             </Intro>
             <Coin />
             <PageMenuGroup />

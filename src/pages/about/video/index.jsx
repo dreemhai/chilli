@@ -23,13 +23,11 @@ const MuteBtn = styled.div`
 	height: 22px;
 	bottom: 30px;
 	right: 30px;
-
 	background-image: url(${props => props.muted ? '/images/about/unmute.png' : '/images/about/mute.svg'});
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-size: center;
 	cursor: pointer;
-
 	@media (min-width: 768px) {
 		width: 36px;
 		height: 30px;
@@ -45,9 +43,7 @@ const BetStuff = styled.div`
   aspect-ratio: 10.8;
   top: 0;
   transform: translate(0, -42%);
-
 	display: flex;
-
 	img {
 		width: 100%;
 		height: 100%;
@@ -61,9 +57,7 @@ const BetStuff2 = styled.div`
   aspect-ratio: 3.39;
   bottom: 0;
   transform: translate(0, 50%);
-
 	display: flex;
-
 	img {
 		width: 100%;
 		height: 100%;
@@ -92,12 +86,10 @@ const StyledSpider = styled.div`
   position: absolute;
   width: 20px;
   height: auto;
-
   img {
     width: 100%;
     height: auto;
   }
-
 	@media (min-width: 768px) {
 		width: 70px;
 	}

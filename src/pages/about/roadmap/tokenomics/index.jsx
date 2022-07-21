@@ -54,9 +54,12 @@ const Text = styled.span`
   padding: 0;
   margin: 0;
   font-family: GilroyLight;
-  font-size: 22px;
-  line-height: 29px;
+  font-size: 20px;
+  line-height: 25px;
   color: #FFF;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
 
   @media (min-width: 768px) {
     font-size: 25px;
@@ -64,9 +67,20 @@ const Text = styled.span`
   }
 
   @media (min-width: 1024px) {
-    font-size: 32px;
-    line-height: 42px;    
+    font-size: 25px;
+    line-height: 32px;    
+    margin-bottom: 12px;
   } 
+`
+
+const SubText = styled(Text)`
+    font-size: 16px;
+    line-height: 19px;
+
+    @media (min-width: 768px) {
+        font-size: 21px;
+        line-height: 25px;
+    }
 `
 
 const ChartWrapper = styled.div`
@@ -85,6 +99,41 @@ const PieChart = styled.div`
         width: 100%;
     }
 `
+
+
+const StyledPinIcon = styled.span`
+  min-height: 32px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+  border: 2px solid transparent; */
+  font-size: 16px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+`;
+
+const PinIcon = () => {
+  return (
+    <StyledPinIcon>
+      <svg
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 16 16"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"></path>
+      </svg>
+    </StyledPinIcon>
+  );
+};
+
 
 const PartDesc = styled.div`
    position: absolute;
@@ -164,8 +213,17 @@ const Tokenomics = () => {
                         </Title>
                         <Content>
                             <Text>
+                                <PinIcon />
                                 This is the project's predominant currency, which had a total supply of 1 quadrillion tokens when it was launched.
                             </Text>
+                            <SubText>
+                                <PinIcon />
+                                The Native token - CHILI is the reward acting as a multipurpose utility token used in the chili ecosystem.
+                            </SubText>
+                            <SubText>
+                                <PinIcon />
+                                Chili gives you the option of creating your customized Avatar, which is a non-fungible token (NFT)
+                            </SubText>
                         </Content>
                     </Flex>
                     <Flex>
