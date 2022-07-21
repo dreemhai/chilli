@@ -81,6 +81,7 @@ const LoadScreen = styled.div`
 
 const HomePage = () => {
   const [isMobile, setMobile] = useState(false);
+  const videoRef = useRef();
 
   useEffect(() => {
     if (
@@ -92,18 +93,21 @@ const HomePage = () => {
     }
   }, []);
 
+  useEffect(() => {
+    console.log("loaded")
+  }, [])
+
   return (
     <Wrapper>
       <StyledContainer fullVertical>
       {/* <PreLoader /> */}
       {isMobile ? 
-      <video autoplay loop id="video">
+      <video autoPlay loop muted id="video" ref={videoRef}>
         <source src={bgVideo} type="video/mp4" />
       </video>
-  
-      :
-      <Scene />
-    }
+       : 
+       <Scene />
+       }
           <div style={{width: '100%', height: '100%', position: 'relative'}}>
             <Intro>
               <span>An interconnected world of unique game</span>
