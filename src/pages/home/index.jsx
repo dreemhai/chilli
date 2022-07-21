@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components/macro';
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
@@ -6,8 +7,10 @@ import { Environment, OrbitControls } from "@react-three/drei";
 import Container from '../../components/Container';
 import FireFlies from '../../components/FireFlies';
 import PageMenuGroup from '../../components/PageMenuGroup';
-import Scene from "./Scene"
+// import Scene from "./Scene"
 import './style.css';
+
+const Scene = React.lazy(() => import("./Scene"));
 
 const Wrapper = styled.div`
   position: fixed;
@@ -65,13 +68,24 @@ const StyledContainer = styled(Container)`
   height: 100%;
 `
 
+const LoadScreen = styled.div`
+  position: fixed;
+  z-index: 100;
+  background-color: #FFF;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+`
+
 const HomePage = () => {
   return (
     <Wrapper>
       <StyledContainer fullVertical>
+        <Suspense fallback={<LoadScreen><span style={{zIndex: '10', color: '#000'}}>Loading...</span></LoadScreen>}>
       {/* <PreLoader /> */}
           <Scene />
-          <div style={{width: '100%', height: '100%', position: 'relative'}}>
+          {/* <div style={{width: '100%', height: '100%', position: 'relative'}}>
             <Intro>
               <span>An interconnected world of unique game</span>
               <span>experiences involving customized avatars usable in</span>
@@ -79,7 +93,7 @@ const HomePage = () => {
             </Intro>
             <Coin />
             <PageMenuGroup />
-          </div>
+          </div> */}
           {/* <SceneWrapper>
             <Canvas drp={[1, 2]} camera={{ position: [25, 5, 15], fov: 20 }}>
               <Environment preset="dawn" />
@@ -91,6 +105,7 @@ const HomePage = () => {
             </Canvas>
           </SceneWrapper> */}
           <FireFlies count={10} />
+        </Suspense>
       </StyledContainer>
     </Wrapper>
   )

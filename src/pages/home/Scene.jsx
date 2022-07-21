@@ -4241,7 +4241,6 @@ const Scene = (props) => {
           {/* <OrbitControls /> */}
         </Suspense>
       </Canvas>
-      <Loader />
     </SceneWrapper>
   )
 }
