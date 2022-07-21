@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import { useEffect } from 'react'
 
 const SectionWrapper = styled.div`
+    position: relative;
     padding-top: 100px;
 `
 
@@ -13,7 +14,7 @@ const InnerWrapper = styled.div`
     padding: 10px;
 
     @media (min-width: 768px) {
-        padding: 46px 10px;
+        padding: 150px 10px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
@@ -163,9 +164,31 @@ const PartDesc = styled.div`
 
 const Cloud = styled.div`
     position: absolute;
-    transform: translate(0, -50%);
-    top: ${props => props.top ? props.top : "0"};
-    left: ${props => props.left ? props.left : "0"};
+    /* transform: translate(0, -50%); */
+    img {
+        width: 100%;
+    }
+`
+
+const Cloud1 = styled(Cloud)`
+    top: 4%;
+    left: 0;
+    width: 60%;
+
+    @media (min-width: 768px) {
+        width: 30%;
+    }
+`
+
+const Cloud2 = styled(Cloud)`
+    bottom: -3%;
+    width: 72%;
+    right: 0;
+
+    @media (min-width: 768px) {
+        width: 40%;
+        bottom: 0%;
+    }
 `
 
 const Tokenomics = () => {
@@ -282,13 +305,16 @@ const Tokenomics = () => {
                         </ChartWrapper>
                     </Flex>
                 </InnerWrapper>
-                {/* <Cloud top='0px' left='0px'>
-                    <img src='/images/about/roadmap/clouds/1.png' />
-                </Cloud>
-                <Cloud top='72%' left='0px'>
-                    <img src='/images/about/roadmap/clouds/2.png' />
-                </Cloud> */}
             </Container>
+            <Cloud1>
+                <img src='/images/about/roadmap/clouds/1.png' />
+            </Cloud1>
+            <Cloud2>
+                <img src='/images/about/roadmap/clouds/2.png' />
+            </Cloud2>
+            {/* <Cloud top='72%' left='0px'>
+                <img src='/images/about/roadmap/clouds/2.png' />
+            </Cloud> */}
         </SectionWrapper>
     )
 }
