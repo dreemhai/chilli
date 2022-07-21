@@ -7,3 +7,7 @@ video {
   left: 0;
   object-position: bottom;
 }
+
+video::-webkit-media-controls-overlay-play-button {
+  display: none;
+}
