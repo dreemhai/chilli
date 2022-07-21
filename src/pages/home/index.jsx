@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components/macro';
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
@@ -81,6 +81,7 @@ const LoadScreen = styled.div`
 
 const HomePage = () => {
   const [isMobile, setMobile] = useState(false);
+  const videoRef = useRef();
 
   useEffect(() => {
     if (
@@ -89,6 +90,7 @@ const HomePage = () => {
       )
     ) {
       setMobile(true);
+      videoRef.current.play();
     }
   }, []);
 
@@ -97,7 +99,7 @@ const HomePage = () => {
       <StyledContainer fullVertical>
       {/* <PreLoader /> */}
       {isMobile ? 
-        <video muted loop playsInline={true} id="video" controls={false}>
+        <video ref={videoRef} muted loop playsInline={true} id="video" controls={false}>
         <source src={bgVideo} type="video/mp4" />
       </video> :
       <Scene />
