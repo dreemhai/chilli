@@ -97,7 +97,7 @@ const HomePage = () => {
       <StyledContainer fullVertical>
       {/* <PreLoader /> */}
       {isMobile ? 
-      <video autoplay loop muted playsinline id="video">
+      <video autoplay loop id="video">
         <source src={bgVideo} type="video/mp4" />
       </video>
   
