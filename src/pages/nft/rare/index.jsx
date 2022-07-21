@@ -102,20 +102,25 @@ const Text = styled.p`
   padding: 0;
   margin: 0;
   font-family: GilroyLight;
-  font-size: 22px;
-  line-height: 29px;
+  font-size: 12px;
+  line-height: 14px;
   color: #FFF;
+  text-align: right;
 
   @media (min-width: 768px) {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    padding: 0;
   }
 
   @media (min-width: 1024px) {
-    font-size: 32px;
-    line-height: 42px;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 20px;
   }
 `
+
 const Content = styled.div``
 
 const ContentWrapper = styled.div`
@@ -123,6 +128,10 @@ const ContentWrapper = styled.div`
     @media (min-width: 768px) {
       align-items : flex-end;
     }
+  }
+
+  @media (max-width: 767px) {
+    padding: 0 20px;
   }
 `
 
@@ -160,13 +169,15 @@ const RareSection = () => {
               <img src='/images/nft/rare/carousel/1.png' />
             </ImgWrapper>
             <ContentWrapper>
-              <Flex column>
+              <Flex column alignEnd>
+                <Content>
+                  <Text>Chili NFT’s are unique in their own way, with the add-ons such as power ups, assets, wearables, every individual has the potential to update and customize their avatar over and over.</Text>
+                </Content>
                 <Title>
                   <Heading>RARE NFTS</Heading>
                 </Title>
                 <Content>
-                  <Text>Each one better than</Text>
-                  <Text>the other!</Text>
+                  <Text>Each one better than the other!</Text>
                 </Content>
               </Flex>
             </ContentWrapper>
@@ -176,13 +187,15 @@ const RareSection = () => {
               <img src='/images/nft/rare/carousel/2.png' />
             </ImgWrapper>
             <ContentWrapper>
-              <Flex column>
+              <Flex column alignEnd>
+                <Content>
+                  <Text>Chili NFT’s are unique in their own way, with the add-ons such as power ups, assets, wearables, every individual has the potential to update and customize their avatar over and over.</Text>
+                </Content>
                 <Title>
                   <Heading>RARE NFTS</Heading>
                 </Title>
                 <Content>
-                  <Text>Each one better than</Text>
-                  <Text>the other!</Text>
+                  <Text>Each one better than the other!</Text>
                 </Content>
               </Flex>
             </ContentWrapper>
@@ -192,13 +205,15 @@ const RareSection = () => {
               <img src='/images/nft/rare/carousel/3.png' />
             </ImgWrapper>
             <ContentWrapper>
-              <Flex column>
+              <Flex column alignEnd>
+                <Content>
+                  <Text>Chili NFT’s are unique in their own way, with the add-ons such as power ups, assets, wearables, every individual has the potential to update and customize their avatar over and over.</Text>
+                </Content>
                 <Title>
                   <Heading>RARE NFTS</Heading>
                 </Title>
                 <Content>
-                  <Text>Each one better than</Text>
-                  <Text>the other!</Text>
+                  <Text>Each one better than the other!</Text>
                 </Content>
               </Flex>
             </ContentWrapper>
@@ -208,13 +223,15 @@ const RareSection = () => {
               <img src='/images/nft/rare/carousel/4.png' />
             </ImgWrapper>
             <ContentWrapper>
-              <Flex column>
+              <Flex column alignEnd>
+                <Content>
+                  <Text>Chili NFT’s are unique in their own way, with the add-ons such as power ups, assets, wearables, every individual has the potential to update and customize their avatar over and over.</Text>
+                </Content>
                 <Title>
                   <Heading>RARE NFTS</Heading>
                 </Title>
                 <Content>
-                  <Text>Each one better than</Text>
-                  <Text>the other!</Text>
+                  <Text>Each one better than the other!</Text>
                 </Content>
               </Flex>
             </ContentWrapper>
@@ -224,13 +241,15 @@ const RareSection = () => {
               <img src='/images/nft/rare/carousel/5.png' />
             </ImgWrapper>
             <ContentWrapper>
-              <Flex column>
+              <Flex column alignEnd>
+                <Content>
+                  <Text>Chili NFT’s are unique in their own way, with the add-ons such as power ups, assets, wearables, every individual has the potential to update and customize their avatar over and over.</Text>
+                </Content>
                 <Title>
                   <Heading>RARE NFTS</Heading>
                 </Title>
                 <Content>
-                  <Text>Each one better than</Text>
-                  <Text>the other!</Text>
+                  <Text>Each one better than the other!</Text>
                 </Content>
               </Flex>
             </ContentWrapper>

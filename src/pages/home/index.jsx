@@ -32,14 +32,14 @@ const Intro = styled.div`
   span {
     color: #FFF;
     font-size: 16px;
-    font-family: GilroyMedium;
+    font-family: GiloryRegular;
   }
 
   @media (min-width: 768px) {
     transform: translate(35px, -50%);
     span {
-      font-size: 32px;
-      line-height: 38px;
+      font-size: 28px;
+      line-height: 34px;
     }
   }
 `
@@ -113,7 +113,7 @@ const HomePage = () => {
               <span>An interconnected world of unique game</span>
               <span>experiences involving customized</span>
               <span>avatars usable in <b>25+ games</b> in a single</span>
-              <span> Play-to-Earn Ecosystem</span>
+              <span style={{textDecoration: 'underline'}}> Play-to-Earn Ecosystem</span>
             </Intro>
             <Coin />
             <PageMenuGroup />

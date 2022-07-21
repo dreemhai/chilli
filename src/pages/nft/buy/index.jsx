@@ -28,17 +28,21 @@ const PanelInner = styled.div`
 `
 
 const Text = styled.p`
-  padding: 0;
+  padding: 0 20px;
   margin: 0;
   font-family: GilroyLight;
-  font-size: 22px;
-  line-height: 29px;
-  color: #FFF;
+  font-size: 15px;
+  line-height: 22px;
+  color: #aaa;
   text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px; 
 
   @media (min-width: 768px) {
-    font-size: 32px;
-    line-height: 38px;
+    width: 40%;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 35px; 
   }
 `
 
@@ -108,7 +112,7 @@ const BuySection = () => {
         <BasicTab />
         <Flex column alignCenter>
           <TextWrapper>
-            <Text>Get your own now!</Text>
+            <Text>This enables owners of NFTs to wear their assets across all games and apps across the Chili metaverse. There are many different types of Avatars to choose from, and the possibilities for customization are endless. </Text>
           </TextWrapper>
           <BuyBtn>BUY NFT</BuyBtn>
         </Flex>

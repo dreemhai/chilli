@@ -20,8 +20,8 @@ const GlobalCSS =  createGlobalStyle`
   }
 
   @font-face {
-    font-family: "GilroyMedium";
-    src: url("/fonts/Gilroy/Gilroy-Medium.ttf") format("truetype");
+    font-family: "GiloryRegular";
+    src: url("/fonts/Gilroy/Gilroy-Regular.ttf") format("truetype");
   }
 
   @font-face {

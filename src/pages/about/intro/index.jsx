@@ -218,7 +218,7 @@ const IntroSection = () => {
                 Chili games (P2E) do what traditional video games don’t — reward
                 players for their time and effort spent in the game.{" "}
               </Text>
-              <Text>
+              <Text underline>
                 <PinIcon />
                 Each Chili game offers a unique way for players to be rewarded
                 for their in-game activity.{" "}
