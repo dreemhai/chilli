@@ -184,7 +184,7 @@ const TeamPage = () => {
 
   console.log("current", currentItem)
   return (
-    <PageWrapper>
+    <PageWrapper className='team--page'>
       <InnerWrapper>
         <div className='carousel-wrapper'
         >

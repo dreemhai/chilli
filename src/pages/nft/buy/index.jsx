@@ -11,7 +11,7 @@ const InnerWrapper = styled.div`
   padding-bottom: 60px;
 `
 
-const PanelInner = styled.div`
+const PanelInner = styled(Flex)`
   background-image: url(${props => props.bgurl ? props.bgurl : ''});
   background-size: contain;
   background-position: center;
@@ -75,10 +75,7 @@ const BasicTab = () => (
     </TabList>
 
     <TabPanel>
-      <PanelInner bgurl='/images/nft/buy/bg.png'>
-        <CharacterWrapper>
-          <img src='/images/nft/buy/character.png' />
-        </CharacterWrapper>
+      <PanelInner justifyCenter alignCenter>
       </PanelInner>     
     </TabPanel>
     <TabPanel>
