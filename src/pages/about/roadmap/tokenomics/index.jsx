@@ -12,6 +12,7 @@ const SectionWrapper = styled.div`
 
 const InnerWrapper = styled.div`
     padding: 10px;
+    padding-top: 80px;
 
     @media (min-width: 768px) {
         padding: 150px 10px;
@@ -33,22 +34,44 @@ const Heading = styled.h2`
   margin: 0;
 
   @media (min-width: 768px) {
-    font-size: 75px;
-    line-height: 80px;
+    font-size: 49px;
+    line-height: 54px;
   }
 
   @media (min-width: 1024px) {
-    font-size: 96px;
-    line-height: 102px;
+    font-size: 69px;
+    line-height: 72px;
   }
+
+  @media (min-width: 1440px) {
+    font-size: 76px;
+    line-height: 84px;
+  }
+`
+
+const InnerPadding = styled.div`
+    padding: 0 20px;
+
+    @media (min-width: 768px) {
+        padding-left: calc((100vw - 1224px) / 2);
+    }
 `
 
 const Title = styled.div`
   margin-bottom: 18px;
+  @media (min-width: 768px) {
+    margin-bottom: 5px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 12px;
+  }
 `
 
 const Content = styled.div`
-    padding-right: 20%;    
+    @media (min-width: 768px) {
+        padding-right: 20%;    
+    }
 `
 
 const Text = styled.span`
@@ -63,14 +86,20 @@ const Text = styled.span`
   margin-bottom: 10px;
 
   @media (min-width: 768px) {
-    font-size: 25px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 18px;
   }
 
   @media (min-width: 1024px) {
-    font-size: 25px;
-    line-height: 32px;    
-    margin-bottom: 12px;
+    font-size: 22px;
+    line-height: 25px;    
+    margin-bottom: 10px;
+  } 
+
+  @media (min-width: 1440px) {
+    margin-bottom: 15px;
+    font-size: 24px;
+    line-height: 28px;
   } 
 `
 
@@ -79,8 +108,18 @@ const SubText = styled(Text)`
     line-height: 19px;
 
     @media (min-width: 768px) {
-        font-size: 21px;
-        line-height: 25px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 20px;
+        line-height: 24px;
     }
 `
 
@@ -88,7 +127,7 @@ const ChartWrapper = styled.div`
     position: relative;
     width: 100%;
     margin-top: 80px;
-
+    
     display: flex;
     justify-content: flex-end;
 `
@@ -181,13 +220,18 @@ const Cloud1 = styled(Cloud)`
 `
 
 const Cloud2 = styled(Cloud)`
-    bottom: -3%;
-    width: 72%;
+    bottom: -1%;
+    width: 100%;
     right: 0;
+    left: 0;
 
     @media (min-width: 768px) {
-        width: 40%;
-        bottom: 0%;
+        width: 100%;
+        bottom: 6%;
+    }
+
+    @media (min-width: 1024px) {
+        bottom: 2%;
     }
 `
 
@@ -226,28 +270,29 @@ const Tokenomics = () => {
 
     return (
         <SectionWrapper>
-            <Container>
                 <InnerWrapper ref={container}>
                     <Flex column justifyCenter>
-                        <Title>
-                            <Heading>
-                                TOKENOMICS
-                            </Heading>
-                        </Title>
-                        <Content>
-                            <Text>
-                                <PinIcon />
-                                This is the project's predominant currency, which had a total supply of 1 quadrillion tokens when it was launched.
-                            </Text>
-                            <SubText>
-                                <PinIcon />
-                                The Native token - CHILI is the reward acting as a multipurpose utility token used in the chili ecosystem.
-                            </SubText>
-                            <SubText>
-                                <PinIcon />
-                                Chili gives you the option of creating your customized Avatar, which is a non-fungible token (NFT)
-                            </SubText>
-                        </Content>
+                        <InnerPadding>
+                            <Title>
+                                <Heading>
+                                    TOKENOMICS
+                                </Heading>
+                            </Title>
+                            <Content>
+                                <Text>
+                                    <PinIcon />
+                                    This is the project's predominant currency, which had a total supply of 1 quadrillion tokens when it was launched.
+                                </Text>
+                                <SubText>
+                                    <PinIcon />
+                                    The Native token - CHILI is the reward acting as a multipurpose utility token used in the chili ecosystem.
+                                </SubText>
+                                <SubText>
+                                    <PinIcon />
+                                    Chili gives you the option of creating your customized Avatar, which is a non-fungible token (NFT)
+                                </SubText>
+                            </Content>
+                        </InnerPadding>
                     </Flex>
                     <Flex>
                         <ChartWrapper>
@@ -305,7 +350,6 @@ const Tokenomics = () => {
                         </ChartWrapper>
                     </Flex>
                 </InnerWrapper>
-            </Container>
             <Cloud1>
                 <img src='/images/about/roadmap/clouds/1.png' />
             </Cloud1>
