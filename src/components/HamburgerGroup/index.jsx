@@ -91,7 +91,6 @@ const HamburgerGroup = ({data}) => {
       t1.play();
     }     
     else {
-      console.log("here")
       t1.reverse();
     }
 

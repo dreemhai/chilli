@@ -1,8 +1,9 @@
 import * as THREE from 'three'
 import React, { useRef, useState, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useGLTF, useAnimations, OrbitControls, Environment, Loader } from "@react-three/drei";
+import { useGLTF, useAnimations, OrbitControls, Environment } from "@react-three/drei";
 import styled from 'styled-components/macro';
+import {Html, useProgress} from '@react-three/drei'
 
 import Fire from "./Fire"
 
@@ -15,7 +16,7 @@ const SceneWrapper = styled.div`
   /* background-color: #2c2104; */
 `
 
-function Model({ ...props }) {
+export function Model({ ...props }) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/model/homepage.glb");
   // const { actions } = useAnimations(animations, group);
@@ -4225,9 +4226,35 @@ function Model({ ...props }) {
 useGLTF.preload("/model/homepage.glb");
 
 
+const LoaderWrapper = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 18px;
+`
+
+
+
+// const Loader = () => {
+//   console.log(loaded);
+//   return (
+//     <LoaderWrapper>
+//       {progress.toFixed(2)} % loaded
+//     </LoaderWrapper>
+//   )
+// }
+
 
 const Scene = (props) => {
   const [ref, light] = useState();
+  const { active, progress, errors, item, loaded, total } = useProgress()
+
+  useEffect(() => {
+    console.log("active", active)
+  }, [active])
+
   return (
     <SceneWrapper>
       <Canvas drp={[1, 2]} camera={{ position: [7.5, 1.2, 3], fov: 20 }}>
@@ -4235,7 +4262,7 @@ const Scene = (props) => {
         <pointLight position={[1.2, 0.2, 0.8]} color={0xa89b32} intensity={1.4} ref={light} />
         {/* <gridHelper /> */}
         {/* {ref && <pointLightHelper args={[ref]} />} */}
-        <Suspense fallback={null}>
+        <Suspense fallback={<Html>{progress} : {loaded}</Html>}>
           <Model scale={40} position={[-0.6, -0.8, -0.3]} />
           <Fire scale={0.15} position={[0.52, -0.3, 0.37]} />
           {/* <OrbitControls /> */}

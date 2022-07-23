@@ -10,8 +10,8 @@ import PageMenuGroup from '../../components/PageMenuGroup';
 // import Scene from "./Scene"
 import bgVideo from "../../video/home.mp4";
 import './style.css';
-
-const Scene = React.lazy(() => import("./Scene"));
+import Fire from './Fire'
+import {Model} from './Scene'
 
 const Wrapper = styled.div`
   position: fixed;
@@ -69,28 +69,14 @@ const StyledContainer = styled(Container)`
   height: 100%;
 `
 
-const LoaderWrapper = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: black;
-  font-size: 18px;
-`
-
-const Loader = () => {
-  const { active, progress, errors, item, loaded, total } = useProgress()
-  console.log(loaded);
-  return (
-    <LoaderWrapper>
-      {progress.toFixed(2)} % loaded
-    </LoaderWrapper>
-  )
-}
-
 const HomePage = () => {
   const [isMobile, setMobile] = useState(false);
   const videoRef = useRef();
+  const { active, progress, errors, item, loaded, total } = useProgress()
+
+  useEffect(() => {
+    console.log(active);
+  }, [active])
 
   useEffect(() => {
     if (
@@ -105,9 +91,16 @@ const HomePage = () => {
   return (
     <Wrapper>
       <StyledContainer fullVertical>
-        <Suspense fallback={<Loader />}>
-          <Scene />
-        </Suspense>
+        <SceneWrapper>
+        <Canvas drp={[1, 2]} camera={{ position: [7.5, 1.2, 3], fov: 20 }}>
+          <ambientLight intensity={1.2} color="#cfd1a3" />
+          <pointLight position={[1.2, 0.2, 0.8]} color={0xa89b32} intensity={1.4} />
+          <Suspense fallback={<Html>{progress} : {loaded}</Html>}>
+            <Model scale={40} position={[-0.6, -0.8, -0.3]} />
+            <Fire scale={0.15} position={[0.52, -0.3, 0.37]} />
+          </Suspense>
+        </Canvas>
+      </SceneWrapper>
       {/* <PreLoader /> */}
       {/* {isMobile ? 
       <video autoPlay loop muted id="video" ref={videoRef}>
@@ -145,3 +138,12 @@ const HomePage = () => {
 }
 
 export default HomePage;
+
+const SceneWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: #2c2104; */
+`
