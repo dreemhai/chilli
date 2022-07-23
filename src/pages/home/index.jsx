@@ -12,6 +12,7 @@ import bgVideo from "../../video/home.mp4";
 import './style.css';
 import Fire from './Fire'
 import {Model} from './Scene'
+import gsap from 'gsap';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -73,9 +74,24 @@ const HomePage = () => {
   const [isMobile, setMobile] = useState(false);
   const videoRef = useRef();
   const { active, progress, errors, item, loaded, total } = useProgress()
+  const loaderRef = useRef();
+  const wrapper = useRef();
 
   useEffect(() => {
-    console.log(active);
+    let qLoader = gsap.utils.selector(loaderRef);
+
+    if (!active) {
+      gsap.timeline({delay: 1})
+      .to(qLoader('.loader-img'), {
+        opacity: 0,
+        duration: 0.2
+      })
+      .to(loaderRef.current, {
+        opacity: 0,
+        duration: 2,
+        ease: "power2.in"
+      })  
+    }
   }, [active])
 
   useEffect(() => {
@@ -89,7 +105,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper ref={wrapper}>
       <StyledContainer fullVertical>
         <SceneWrapper>
         <Canvas drp={[1, 2]} camera={{ position: [7.5, 1.2, 3], fov: 20 }}>
@@ -101,6 +117,11 @@ const HomePage = () => {
           </Suspense>
         </Canvas>
       </SceneWrapper>
+      <LoaderWrapper ref={loaderRef}>
+        <LoaderImg className='loader-img'>
+          <img src="/images/home/loading.gif" alt='loading.gif' />
+        </LoaderImg>
+      </LoaderWrapper>
       {/* <PreLoader /> */}
       {/* {isMobile ? 
       <video autoPlay loop muted id="video" ref={videoRef}>
@@ -109,7 +130,7 @@ const HomePage = () => {
        : 
        <Scene />
        } */}
-          {/* <div style={{width: '100%', height: '100%', position: 'relative'}}>
+          <div style={{width: '100%', height: '100%', position: 'relative'}}>
             <Intro>
               <span>An interconnected world of unique game</span>
               <span>experiences involving customized</span>
@@ -118,7 +139,7 @@ const HomePage = () => {
             </Intro>
             <Coin />
             <PageMenuGroup />
-          </div> */}
+          </div>
 
           {/* <SceneWrapper>
             <Canvas drp={[1, 2]} camera={{ position: [25, 5, 15], fov: 20 }}>
@@ -146,4 +167,23 @@ const SceneWrapper = styled.div`
   right: 0;
   bottom: 0;
   /* background-color: #2c2104; */
+`
+
+const LoaderWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 1;
+  z-index: 100;
+`
+const LoaderImg = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `
