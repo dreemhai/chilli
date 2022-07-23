@@ -7,6 +7,7 @@ import MenuGroup from "../../components/MenuGroup";
 const HeaderWrapper = styled.div`
   position: absolute;
   width: 100%;
+  opacity: 0;
 `
 
 const InnerWrapper = styled.div`
@@ -50,7 +51,7 @@ const Header = () => {
   ];
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper className='header--wrapper'>
       <Container>
         <Flex alignCenter justifyBetween>
           <Logo>

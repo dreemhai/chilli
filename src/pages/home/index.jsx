@@ -89,8 +89,12 @@ const HomePage = () => {
       .to(loaderRef.current, {
         opacity: 0,
         duration: 2,
+        zIndex: -1,
         ease: "power2.in"
-      })  
+      })
+      .to('.header--wrapper', {
+        opacity: 1
+      })
     }
   }, [active])
 
@@ -107,29 +111,28 @@ const HomePage = () => {
   return (
     <Wrapper ref={wrapper}>
       <StyledContainer fullVertical>
-        <SceneWrapper>
-        <Canvas drp={[1, 2]} camera={{ position: [7.5, 1.2, 3], fov: 20 }}>
-          <ambientLight intensity={1.2} color="#cfd1a3" />
-          <pointLight position={[1.2, 0.2, 0.8]} color={0xa89b32} intensity={1.4} />
-          <Suspense fallback={<Html>{progress} : {loaded}</Html>}>
-            <Model scale={40} position={[-0.6, -0.8, -0.3]} />
-            <Fire scale={0.15} position={[0.52, -0.3, 0.37]} />
-          </Suspense>
-        </Canvas>
-      </SceneWrapper>
-      <LoaderWrapper ref={loaderRef}>
-        <LoaderImg className='loader-img'>
-          <img src="/images/home/loading.gif" alt='loading.gif' />
-        </LoaderImg>
-      </LoaderWrapper>
+        <LoaderWrapper ref={loaderRef}>
+          <LoaderImg className='loader-img'>
+            <img src="/images/home/loading.gif" alt='loading.gif' />
+          </LoaderImg>
+        </LoaderWrapper>
       {/* <PreLoader /> */}
-      {/* {isMobile ? 
+      {isMobile ? 
       <video autoPlay loop muted id="video" ref={videoRef}>
         <source src={bgVideo} type="video/mp4" />
       </video>
        : 
-       <Scene />
-       } */}
+       <SceneWrapper>
+          <Canvas drp={[1, 2]} camera={{ position: [7.5, 1.2, 3], fov: 20 }}>
+            <ambientLight intensity={1.2} color="#cfd1a3" />
+            <pointLight position={[1.2, 0.2, 0.8]} color={0xa89b32} intensity={1.4} />
+            <Suspense fallback={<Html>{progress} : {loaded}</Html>}>
+              <Model scale={40} position={[-0.6, -0.8, -0.3]} />
+              <Fire scale={0.15} position={[0.52, -0.3, 0.37]} />
+            </Suspense>
+          </Canvas>
+        </SceneWrapper>
+       }
           <div style={{width: '100%', height: '100%', position: 'relative'}}>
             <Intro>
               <span>An interconnected world of unique game</span>
