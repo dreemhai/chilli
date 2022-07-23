@@ -69,15 +69,24 @@ const StyledContainer = styled(Container)`
   height: 100%;
 `
 
-const LoadScreen = styled.div`
+const LoaderWrapper = styled.div`
   position: fixed;
-  z-index: 100;
-  background-color: #FFF;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 18px;
 `
+
+const Loader = () => {
+  const { active, progress, errors, item, loaded, total } = useProgress()
+  console.log(loaded);
+  return (
+    <LoaderWrapper>
+      {progress.toFixed(2)} % loaded
+    </LoaderWrapper>
+  )
+}
 
 const HomePage = () => {
   const [isMobile, setMobile] = useState(false);
@@ -93,22 +102,21 @@ const HomePage = () => {
     }
   }, []);
 
-  useEffect(() => {
-    console.log("loaded")
-  }, [])
-
   return (
     <Wrapper>
       <StyledContainer fullVertical>
+        <Suspense fallback={<Loader />}>
+          <Scene />
+        </Suspense>
       {/* <PreLoader /> */}
-      {isMobile ? 
+      {/* {isMobile ? 
       <video autoPlay loop muted id="video" ref={videoRef}>
         <source src={bgVideo} type="video/mp4" />
       </video>
        : 
        <Scene />
-       }
-          <div style={{width: '100%', height: '100%', position: 'relative'}}>
+       } */}
+          {/* <div style={{width: '100%', height: '100%', position: 'relative'}}>
             <Intro>
               <span>An interconnected world of unique game</span>
               <span>experiences involving customized</span>
@@ -117,7 +125,7 @@ const HomePage = () => {
             </Intro>
             <Coin />
             <PageMenuGroup />
-          </div>
+          </div> */}
 
           {/* <SceneWrapper>
             <Canvas drp={[1, 2]} camera={{ position: [25, 5, 15], fov: 20 }}>

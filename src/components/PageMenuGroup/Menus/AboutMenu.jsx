@@ -157,7 +157,6 @@ const Menu = ({swingRadius}) => {
           tl.play(0)
         }}
         onMouseLeave={() => {
-          console.log("leave")
           tl.progress(0);
           tl2.play(0)
         }}

@@ -168,7 +168,6 @@ const TeamPage = () => {
     let nextItem = (nextSlide - 2) % 7;
 
     let cQ = gsap.utils.selector(chracterRef);
-    console.log(cQ(".character").at(0));
     gsap.timeline()
     .to(cQ(".character").at(currentItem), {
       opacity: '0',
@@ -182,7 +181,6 @@ const TeamPage = () => {
     setCurrentItem(nextItem);
   }
 
-  console.log("current", currentItem)
   return (
     <PageWrapper className='team--page'>
       <InnerWrapper>

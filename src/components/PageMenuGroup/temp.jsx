@@ -67,7 +67,6 @@ const Button = styled.div`
 `
 
 const Menu = ({swingRadius, position, boardData, standardData, textData}) => {
-  console.log("board", boardData.img)
   const boardRef = useRef();
   const btnRef = useRef();
 

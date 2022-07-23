@@ -12,7 +12,7 @@ const SceneWrapper = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #2c2104;
+  /* background-color: #2c2104; */
 `
 
 function Model({ ...props }) {

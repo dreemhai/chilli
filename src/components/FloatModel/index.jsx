@@ -33,8 +33,6 @@ const FloatModel = ({mposition, position, imgurl}) => {
     let x = e.clientX - bBox.x;
     let y = e.clientY - bBox.y;
 
-    console.log(x, y)
-
     gsap.to(el.current, {
       x: x * 0.2,
       y: y * 0.2,

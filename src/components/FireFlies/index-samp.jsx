@@ -9,7 +9,7 @@ var total = 40,
   h = window.innerHeight,
   Tweens = [],
   SPs = 1
-console.log(container)
+// console.log(container)
 
 for (var i = total; i--; ) {
   var Div = document.createElement('div')

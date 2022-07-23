@@ -49,7 +49,6 @@ const HorizonGallery = (e) => {
             currentCardEl[0].style.zIndex = "50";
     
             if (direction === "right") {
-                console.log("here")
                 previousCardEl[0].style.zIndex = "20";
                 nextCardEl[0].style.zIndex = "30";
     
@@ -58,7 +57,6 @@ const HorizonGallery = (e) => {
                 nextCardEl[0].classList.add("current--card");
     
             } else if (direction === "left") {
-                console.log("there")
                 previousCardEl[0].style.zIndex = "30";
                 nextCardEl[0].style.zIndex = "20";
     
@@ -75,8 +73,6 @@ const HorizonGallery = (e) => {
       let currentInfoEl = qInfo(".current--info");
       let previousInfoEl = qInfo(".previous--info");
       let nextInfoEl = qInfo(".next--info");
-
-      console.log("if", direction == "right")
 
       gsap.timeline()
         .to(

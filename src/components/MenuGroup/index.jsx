@@ -55,7 +55,6 @@ const HiddenMenu = ({data}) => {
   }, [])
 
   useEffect(() => {
-    console.log(clicked)
     tl.current.reversed(!clicked);
   }, [clicked])
 
