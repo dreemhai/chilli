@@ -27,3 +27,18 @@
   padding-left: calc((100vw - 1224px) / 2);
   padding-right: calc((100vw - 1224px) / 2);
 }
+
+.carousel--wrapper {
+  width: 200px;
+
+  @media (min-width: 768px) {
+    width: 250px;
+  }
+
+  .react-multi-carousel-list {
+    overflow: visible; 
+  }
+
+  .react-multi-carousel-track {
+  }
+}

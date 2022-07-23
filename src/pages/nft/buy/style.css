@@ -27,4 +27,16 @@
   max-width: 1224px;
   padding-left: calc((100vw - 1224px) / 2);
   padding-right: calc((100vw - 1224px) / 2);
+}
+
+.carousel--wrapper {
+  width: 200px;
+}
+@media (min-width: 768px) {
+  .carousel--wrapper {
+    width: 250px;
+  }
+}
+.carousel--wrapper .react-multi-carousel-list {
+  overflow: visible;
 }/*# sourceMappingURL=style.css.map */
