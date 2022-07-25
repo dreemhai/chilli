@@ -20,6 +20,7 @@ const Wrapper = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
+  background: #010104;
 `
 
 const Intro = styled.div`
@@ -117,22 +118,18 @@ const HomePage = () => {
           </LoaderImg>
         </LoaderWrapper>
       {/* <PreLoader /> */}
-      {isMobile ? 
-      <video autoPlay loop muted id="video" ref={videoRef}>
-        <source src={bgVideo} type="video/mp4" />
-      </video>
-       : 
        <SceneWrapper>
-          <Canvas drp={[1, 2]} camera={{ position: [7.5, 1.2, 3], fov: 20 }}>
+          <Canvas drp={[1, 2]} camera={{ position: [7.5, 1.2, 4.5], fov: 20 }}>
             <ambientLight intensity={1.2} color="#cfd1a3" />
+            {/* <gridHelper /> */}
             <pointLight position={[1.2, 0.2, 0.8]} color={0xa89b32} intensity={1.4} />
             <Suspense fallback={<Html>{progress} : {loaded}</Html>}>
               <Model scale={40} position={[-0.6, -0.8, -0.3]} />
               <Fire scale={0.15} position={[0.52, -0.3, 0.37]} />
+              {/* <OrbitControls /> */}
             </Suspense>
           </Canvas>
         </SceneWrapper>
-       }
           <div style={{width: '100%', height: '100%', position: 'relative'}}>
             <Intro>
               <span>An interconnected world of unique game</span>
@@ -155,7 +152,7 @@ const HomePage = () => {
             </Canvas>
           </SceneWrapper> */}
 
-          <FireFlies count={10} />
+          {/* <FireFlies count={10} /> */}
       </StyledContainer>
     </Wrapper>
   )

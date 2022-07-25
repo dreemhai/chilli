@@ -187,10 +187,12 @@ const TeamPage = () => {
         <div className='carousel-wrapper'
         >
           <Carousel
+            draggable={true}
+            showDots={false}
             responsive={responsive}
-            ssr={true}
             infinite={true}
-            autoPlay={false}
+            autoPlay={true}
+            customTransition="all .5s ease"
             beforeChange={nextSlide => beforeChange(nextSlide)}
             arrows={false}
             ref={el => setCarouselState(el)}
