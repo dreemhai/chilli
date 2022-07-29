@@ -3,12 +3,9 @@ import styled from 'styled-components/macro';
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Html, useProgress } from '@react-three/drei'
-import { Environment, OrbitControls } from "@react-three/drei";
 import Container from '../../components/Container';
-import FireFlies from '../../components/FireFlies';
 import PageMenuGroup from '../../components/PageMenuGroup';
 // import Scene from "./Scene"
-import bgVideo from "../../video/home.mp4";
 import './style.css';
 import Fire from './Fire'
 import {Model} from './Scene'
