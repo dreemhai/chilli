@@ -123,6 +123,7 @@ const Text = styled.p`
   }
 `
 
+
 const CustomArrowWrapper = styled(Flex)`
   padding-right: 10px;
 `
