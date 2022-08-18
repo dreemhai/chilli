@@ -11,6 +11,7 @@ import Fire from './Fire'
 import {Model} from './Scene'
 import gsap from 'gsap';
 
+
 const Wrapper = styled.div`
   position: fixed;
   top: 0;
