@@ -1,6 +1,7 @@
 import { useProgress } from "@react-three/drei"
 import styled from 'styled-components/macro'
 
+
 const LoaderWrapper = styled.div`
   position: fixed;
   top: 0;
