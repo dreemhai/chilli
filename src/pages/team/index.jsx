@@ -1,6 +1,5 @@
 import styled from 'styled-components/macro';
 import Footer from '../footer';
-
 import Flex from '../../components/Flex';
 
 import Carousel from "react-multi-carousel";
